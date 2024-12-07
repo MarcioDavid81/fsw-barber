@@ -7,6 +7,7 @@ import { db } from "./_lib/prisma"
 import BarberShopItem from "./_components/barbershop-item"
 import { quickSearchOptions } from "./_constants/search"
 import BookingItem from "./_components/booking-item"
+import Footer from "./_components/footer"
 
 const Home = async () => {
   const barbershops = await db.barbershop.findMany({})
@@ -16,12 +17,18 @@ const Home = async () => {
     },
   })
 
+  const day = new Date().toLocaleDateString("pt-BR", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+  })
+
   return (
     <div>
       <Header />
       <div className="p-5">
         <h2 className="text-xl font-bold">Olá, Marcio!</h2>
-        <p>Segunda-feira, 05 de Agosto</p>
+        <p className="capitalize">{day}</p>
 
         <div className="mt-6 flex items-center gap-2">
           <Input placeholder="Search" />
@@ -75,6 +82,7 @@ const Home = async () => {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   )
 }
