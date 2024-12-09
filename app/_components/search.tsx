@@ -35,7 +35,11 @@ const Search = () => {
           render={({ field }) => (
             <FormItem className="w-full">
               <FormControl>
-                <Input placeholder="Faça sua busca" {...field} />
+                <Input
+                  className="text-xs"
+                  placeholder="Busque por uma barbearia..."
+                  {...field}
+                />
               </FormControl>
 
               <FormMessage />
