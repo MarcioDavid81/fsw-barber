@@ -14,7 +14,7 @@ export const quickSearchOptions: QuickSearchOption[] = [
   },
   {
     imageUrl: "/acabamento.svg",
-    title: "Acabamento",
+    title: "Pézinho",
   },
   {
     imageUrl: "/sobrancelha.svg",
