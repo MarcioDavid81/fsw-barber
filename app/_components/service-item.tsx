@@ -130,7 +130,15 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
         serviceId: service.id,
         date: newDate,
       })
-      toast.success("Reserva criada com sucesso")
+      toast.success("Reserva criada com sucesso", {
+        description: `Sua reserva para ${service.name} foi criada com sucesso`,
+        action: {
+          label: "Ver reservas",
+          onClick: () => {
+            window.location.href = "/bookings"
+          },
+        },
+      })
     } catch (error) {
       console.error(error)
       toast.error("Erro ao criar reserva")
